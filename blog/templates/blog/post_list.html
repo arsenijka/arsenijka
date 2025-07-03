@@ -3,148 +3,596 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мій перший сайт</title>
+    <title>Minecraft Universe | Офіційний фан-сайт</title>
     <style>
-        /* CSS стилі */
-		img{
-		width: 200px;
-		float: right;
-		}
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* CSS Styles */
+        :root {
+            --mc-green: #5b9c64;
+            --mc-dark-green: #3a6c3f;
+            --mc-brown: #836539;
+            --mc-dark-brown: #5a4a2a;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
             color: #333;
+            background-image: url('https://blockworks.co/wp-content/uploads/2022/11/minecraft-cover.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
         
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
+            background-color: var(--mc-dark-green);
+            color: white;
+            padding: 1rem;
             text-align: center;
+            border-bottom: 5px solid var(--mc-brown);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 0 var(--mc-brown);
+            margin-bottom: 0.5rem;
         }
         
         nav {
-            background: #e8491d;
-            padding: 10px 0;
+            background-color: var(--mc-green);
+            padding: 0.5rem;
         }
         
         nav ul {
-            padding: 0;
+            display: flex;
+            justify-content: center;
             list-style: none;
-            text-align: center;
         }
         
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+        nav li {
+            margin: 0 1rem;
         }
         
-        nav ul li a {
+        nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
         }
         
-        nav ul li a:hover {
-            color: #cccccc;
+        nav a:hover {
+            background-color: var(--mc-dark-green);
         }
         
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border: 5px solid var(--mc-brown);
         }
         
-        main {
-            padding: 20px;
-            background: white;
-            margin-bottom: 20px;
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(91, 156, 100, 0.8), rgba(58, 108, 63, 0.8));
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section {
+            padding: 2rem;
+            border-bottom: 2px solid var(--mc-green);
+        }
+        
+        .content-section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: var(--mc-dark-green);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .video-card {
+            background-color: white;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-info {
+            padding: 1rem;
+        }
+        
+        .video-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--mc-dark-green);
+        }
+        
+        .newsletter {
+            background-color: var(--mc-green);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+        
+        .newsletter h2 {
+            color: white;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 300px;
+        }
+        
+        .newsletter-form button {
+            padding: 0.5rem 1rem;
+            background-color: var(--mc-brown);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--mc-dark-brown);
         }
         
         footer {
-            background: #35424a;
+            background-color: var(--mc-dark-green);
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
+            padding: 1rem;
+            margin-top: 2rem;
         }
         
-        h1, h2, h3 {
-            color: #35424a;
-        }
-        
-        .button {
+        .mc-button {
             display: inline-block;
-            background: #e8491d;
+            background-color: var(--mc-brown);
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
-            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
         }
         
-        .button:hover {
-            background: #333;
+        .mc-button:hover {
+            background-color: var(--mc-dark-brown);
+            transform: translateY(-2px);
+        }
+        
+        .block-counter {
+            background-color: var(--mc-dark-green);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .counter-display {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Мій перший сайт</h1>
-            <p>Створено з HTML та CSS</p>
-        </div>
+        <div class="logo">MINECRAFT UNIVERSE</div>
+        <nav>
+            <ul>
+                <li><a href="#about">Про гру</a></li>
+                <li><a href="#videos">Відео</a></li>
+                <li><a href="#tips">Поради</a></li>
+                <li><a href="#news">Новини</a></li>
+            </ul>
+        </nav>
     </header>
     
-    <nav>
-        <div class="container">
-            <ul>
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0--GQQpqKdFFolL567lNImXB1NChSTH0H8Q&s">
-                <li><a href="#">Головна</a></li>
-                <li><a href="#">Про нас</a></li>
-                <li><a href="#">Послуги</a></li>
-                <li><a href="#">Контакти</a></li>
-            </ul>
-        </div>
-    </nav>
-    
     <div class="container">
-        <main>
-            <article>
-                <h2>Ласкаво просимо на наш сайт!</h2>
-                <p>Це простий приклад веб-сайту, створеного тільки за допомогою HTML та CSS. Ви можете використовувати цей код як основу для свого власного сайту.</p>
-                
-                <h3>Наші переваги</h3>
-                <ul>
-                    <li>Простота використання</li>
-                    <li>Сучасний дизайн</li>
-                    <li>Адаптивність</li>
-                    <li>Швидкість завантаження</li>
-                </ul>
-                
-                <a href="#" class="button">Дізнатися більше</a>
-            </article>
-        </main>
+        <section class="hero">
+            <h1>Ласкаво просимо у світ Minecraft!</h1>
+            <p>Дізнайтеся все про цю дивовижну гру - від базових механік до просунутих будівельних технік</p>
+            <a href="#videos" class="mc-button">Дивитися відео</a>
+        </section>
         
-        <aside>
-            <div style="background: #e6e6e6; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
-                <h3>Останні новини</h3>
-                <p>Ми оновили наш сайт! Тепер він ще кращий.</p>
-                <p><small>Опубліковано: 01.01.2023</small></p>
+        <section id="about" class="content-section">
+            <h2>Що таке Minecraft?</h2>
+            <p>Minecraft - це пісочниця з відкритим світом, де гравці можуть будувати, досліджувати та виживати в блочному 3D-світі. Гра була створена Маркусом Перссоном (Notch) і розроблена Mojang Studios.</p>
+            <p>У Minecraft ви можете:</p>
+            <ul>
+                <li>Будувати вражаючі споруди з блоків</li>
+                <li>Досліджувати різні біоми - від лісів до пустель</li>
+                <li>Боротися з мобами в режимі виживання</li>
+                <li>Створювати складні механізми з редстоуну</li>
+                <li>Грати з друзями в мультиплеєрі</li>
+            </ul>
+            <!-- Додайте цей розділ після секції "news" і перед "newsletter" -->
+<section id="game" class="content-section">
+    <h2>Міні-гра: Знайди Кріпера</h2>
+    <p>Знайдіть прихованого кріпера серед блоків! У вас є 3 спроби. Клікайте на блоки, щоб знайти його.</p>
+    
+    <div class="game-container">
+        <div class="game-stats">
+            <p>Спроби: <span id="attempts">3</span></p>
+            <p>Результат: <span id="result"></span></p>
+            <button onclick="startGame()" class="mc-button">Почати гру</button>
+        </div>
+        
+        <div class="game-board" id="gameBoard">
+            <!-- Блоки генеруються через JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Додайте ці стилі до розділу CSS -->
+<style>
+    .game-container {
+        background-color: #f5f5f5;
+        padding: 1rem;
+        border-radius: 5px;
+        border: 3px solid var(--mc-dark-green);
+        margin-top: 1rem;
+    }
+    
+    .game-stats {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 1rem;
+        background-color: var(--mc-green);
+        padding: 0.5rem;
+        border-radius: 5px;
+        color: white;
+    }
+    
+    .game-board {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+    }
+    
+    .game-block {
+        aspect-ratio: 1/1;
+        background-color: var(--mc-brown);
+        border: 2px solid var(--mc-dark-brown);
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0;
+    }
+    
+    .game-block:hover {
+        transform: scale(1.05);
+    }
+    
+    .game-block.revealed {
+        background-color: #d1d1d1;
+        font-size: 1.5rem;
+    }
+    
+    .game-block.creeper {
+        background-color: #5b9c64;
+    }
+</style>
+
+<!-- Додайте цей JavaScript код до існуючого script -->
+<script>
+    // Міні-гра "Знайди Кріпера"
+    let creeperPosition;
+    let attemptsLeft;
+    let gameStarted = false;
+    
+    function startGame() {
+        // Очистити поле
+        const gameBoard = document.getElementById('gameBoard');
+        gameBoard.innerHTML = '';
+        
+        // Генеруємо 25 блоків
+        for (let i = 0; i < 25; i++) {
+            const block = document.createElement('div');
+            block.className = 'game-block';
+            block.dataset.index = i;
+            block.addEventListener('click', () => handleBlockClick(i));
+            gameBoard.appendChild(block);
+        }
+        
+        // Випадково обираємо позицію кріпера
+        creeperPosition = Math.floor(Math.random() * 25);
+        attemptsLeft = 3;
+        gameStarted = true;
+        
+        // Оновити інтерфейс
+        document.getElementById('attempts').textContent = attemptsLeft;
+        document.getElementById('result').textContent = '';
+    }
+    
+    function handleBlockClick(index) {
+        if (!gameStarted) return;
+        
+        const block = document.querySelector(`.game-block[data-index="${index}"]`);
+        if (block.classList.contains('revealed')) return;
+        
+        block.classList.add('revealed');
+        
+        if (index === creeperPosition) {
+            // Знайшли кріпера
+            block.classList.add('creeper');
+            block.innerHTML = '💥';
+            document.getElementById('result').textContent = 'Ви перемогли!';
+            gameStarted = false;
+            
+            // Відтворити звук кріпера
+            const audio = new Audio('https://www.minecraft.net/content/dam/games/minecraft/sound-effects/creeper1.ogg');
+            audio.volume = 0.3;
+            audio.play();
+        } else {
+            // Не кріпер
+            block.innerHTML = '❌';
+            attemptsLeft--;
+            document.getElementById('attempts').textContent = attemptsLeft;
+            
+            if (attemptsLeft <= 0) {
+                document.getElementById('result').textContent = 'Гра закінчена! Кріпер був у блоці ' + (creeperPosition + 1);
+                gameStarted = false;
+                
+                // Показати кріпера
+                const creeperBlock = document.querySelector(`.game-block[data-index="${creeperPosition}"]`);
+                creeperBlock.classList.add('creeper');
+                creeperBlock.innerHTML = '💥';
+            }
+        }
+    }
+</script>
+            <div class="block-counter">
+                <h3>Скільки блоків ви видобули?</h3>
+                <div class="counter-display" id="blockCounter">0</div>
+                <button onclick="incrementCounter()" class="mc-button">Видобути блок</button>
+                <button onclick="resetCounter()" class="mc-button">Почати спочатку</button>
             </div>
-        </aside>
+        </section>
+        
+        <section id="videos" class="content-section">
+            <h2>Кращі відео про Minecraft</h2>
+            <p>Подивіться ці цікаві відео, щоб дізнатися більше про гру:</p>
+            
+            <div class="video-gallery">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/MmB9b5njVbA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Огляд Minecraft 1.20</h3>
+                        <p>Усе про нові оновлення в останній версії гри</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/6sO7IYIXC1M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>10 простих ферм для початківців</h3>
+                        <p>Навчіться будувати корисні автоматичні ферми</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/6sO7IYIXC1M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Як побудути сучасний будинок</h3>
+                        <p>Покроковий гайд з будівництва</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="tips" class="content-section">
+            <h2>Корисні поради для новачків</h2>
+            <p>Ось декілька порад, які допоможуть вам у світі Minecraft:</p>
+            
+            <h3>Перший день у грі</h3>
+            <p>1. Збирайте дерево - це ваш основний ресурс на початку.<br>
+            2. Створіть верстак для крафтингу.<br>
+            3. Побудуйте простенький будинок до настання ночі.<br>
+            4. Виготовіть дерев'яні, а потім кам'яні інструменти.<br>
+            5. Викопуйте шахту для видобутку корисних копалин.</p>
+            
+            <h3>Безпека вночі</h3>
+            <p>У темний час доби з'являються ворожі моби. Щоб захиститися:<br>
+            - Використовуйте смолоскипи для освітлення території<br>
+            - Побудуйте стіни навколо свого будинку<br>
+            - Створіть ліжко, щоб пропускати ніч</p>
+        </section>
+        
+        <section id="news" class="content-section">
+            <h2>Останні новини Minecraft</h2>
+            
+            <article>
+                <h3>Оновлення 1.20 "Trails & Tales"</h3>
+                <p>Нове оновлення додає багато цікавих функцій, включаючи:</p>
+                <ul>
+                    <li>Нові блоки: бамбук, кераміка</li>
+                    <li>Мобів: верблюди, сніжерії</li>
+                    <li>Систему археології</li>
+                    <li>Покращену систему стрічок досягнень</li>
+                </ul>
+            </article>
+            
+            <article>
+                <h3>Minecraft Live 2023</h3>
+                <p>Щорічна подія, де розробники розповідають про майбутні оновлення. У 2023 році було анонсовано:</p>
+                <ul>
+                    <li>Нового моба - краб</li>
+                    <li>Нові функції для будівництва</li>
+                    <li>Покращення біомів</li>
+                </ul>
+            </article>
+        </section>
+        
+        <div class="newsletter">
+            <h2>Підпишіться на нашу розсилку</h2>
+            <p>Отримуйте останні новини, поради та оновлення прямо на пошту</p>
+            <div class="newsletter-form">
+                <input type="email" id="emailInput" placeholder="Ваша електронна пошта">
+                <button onclick="subscribe()">Підписатися</button>
+            </div>
+        </div>
     </div>
     
     <footer>
-        <div class="container">
-            <p>&copy; 2023 Мій перший сайт. Усі права захищені.</p>
-        </div>
+        <p>&copy; 2023 Minecraft Universe Fan Site. Це неофіційний фан-сайт, не пов'язаний з Mojang або Microsoft.</p>
     </footer>
-</body>
-</html>
+    
+    <script>
+        // JavaScript функції
+        let blockCount = 0;
+        
+        // Лічильник блоків
+        function incrementCounter() {
+            blockCount++;
+            document.getElementById('blockCounter').textContent = blockCount;
+            
+            // Додаємо анімацію
+            const counter = document.getElementById('blockCounter');
+            counter.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                counter.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Звук видобутку блоку (якщо дозволено)
+            const audio = new Audio('https://www.minecraft.net/content/dam/games/minecraft/sound-effects/minecraft-dig-stone1.ogg');
+            audio.volume = 0.3;
+            audio.play().catch(e => console.log("Автовідтворення звуку заблоковано"));
+        }
+        
+        function resetCounter() {
+            blockCount = 0;
+            document.getElementById('blockCounter').textContent = blockCount;
+        }
+        
+        // Підписка на розсилку
+        function subscribe() {
+            const email = document.getElementById('emailInput').value;
+            if (email && email.includes('@')) {
+                alert('Дякуємо за підписку! На адресу ' + email + ' було надіслано листа з підтвердженням.');
+                document.getElementById('emailInput').value = '';
+            } else {
+                alert('Будь ласка, введіть коректну email адресу');
+            }
+        }
+        
+        // Плавна прокрутка для навігації
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Додаємо ефект "підсвічування" для секцій при прокрутці
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.content-section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Ініціалізація анімацій при завантаженні
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.content-section').forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+               
