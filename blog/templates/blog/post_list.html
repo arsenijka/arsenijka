@@ -1,30 +1,150 @@
-<html>
+<!DOCTYPE html>
+<html lang="uk">
 <head>
-<title>Django Geeks blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій перший сайт</title>
+    <style>
+        /* CSS стилі */
+		img{
+		width: 200px;
+		float: right;
+		}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        nav {
+            background: #e8491d;
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            color: #cccccc;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        
+        main {
+            padding: 20px;
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background: #35424a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: #35424a;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #e8491d;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .button:hover {
+            background: #333;
+        }
+    </style>
 </head>
 <body>
-<div>
-<h1><a href="">Django Geeks Blog</a></h1>
-</div>
-
-<div>
-<p>published: 14.06.2014, 12:14</p>
-
-<h2><a href="">My first post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem
-lacinia quam venenatis vestibulum. Donec id elit non mi
-porta gravida at eget metus. Fusce dapibus, tellus ac
-cursus commodo, tortor mauris condimentum nibh, ut
-fermentum massa justo sit amet risus.</p>
-</div>
-
-<div>
-<p>published: 14.06.2014, 12:14</p>
-<h2><a href="">My second post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem
-lacinia quam venenatis vestibulum. Donec id elit non mi
-porta gravida at eget metus. Fusce dapibus, tellus ac
-cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-</div>
+    <header>
+        <div class="container">
+            <h1>Мій перший сайт</h1>
+            <p>Створено з HTML та CSS</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0--GQQpqKdFFolL567lNImXB1NChSTH0H8Q&s">
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Послуги</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <article>
+                <h2>Ласкаво просимо на наш сайт!</h2>
+                <p>Це простий приклад веб-сайту, створеного тільки за допомогою HTML та CSS. Ви можете використовувати цей код як основу для свого власного сайту.</p>
+                
+                <h3>Наші переваги</h3>
+                <ul>
+                    <li>Простота використання</li>
+                    <li>Сучасний дизайн</li>
+                    <li>Адаптивність</li>
+                    <li>Швидкість завантаження</li>
+                </ul>
+                
+                <a href="#" class="button">Дізнатися більше</a>
+            </article>
+        </main>
+        
+        <aside>
+            <div style="background: #e6e6e6; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                <h3>Останні новини</h3>
+                <p>Ми оновили наш сайт! Тепер він ще кращий.</p>
+                <p><small>Опубліковано: 01.01.2023</small></p>
+            </div>
+        </aside>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Мій перший сайт. Усі права захищені.</p>
+        </div>
+    </footer>
 </body>
 </html>
